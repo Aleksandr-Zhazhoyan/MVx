@@ -13,13 +13,22 @@ struct ContentView: View {
         networkService: ServiceLocator.shared.resolve(),
         parsingService: ServiceLocator.shared.resolve()
     )
+    @State private var languageManager = LanguageManager.shared
     
     var body: some View {
         NavigationStack{
             VStack{
+                Picker("Language", selection: $languageManager.selectedLanguage) {
+                    ForEach(Language.allCases) { lang in
+                        Text(lang.displayName).tag(lang)
+                    }
+                }
+                .pickerStyle(.segmented)
+                .padding(.horizontal)
+                
                 Picker("Category", selection: $selectedCategory) {
                     ForEach(Category.allCases, id: \.self) {
-                        Text($0.rawValue.capitalized)
+                        Text(NSLocalizedString($0.rawValue, comment: ""))
                     }
                 }
                 .pickerStyle(.segmented)

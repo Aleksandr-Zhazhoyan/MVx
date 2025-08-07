@@ -1,0 +1,14 @@
+//
+//  Localizable.strings
+//  MVx
+//
+//  Created by Aleksandr Zhazhoyan on 07.08.2025.
+//
+
+"characters" = "Characters";
+"locations" = "Locations";
+"episodes" = "Episodes";
+"character_detail" = "Character Detail";
+"character_id" = "ID";
+"character_name" = "Name";
+"language" = "Language";
